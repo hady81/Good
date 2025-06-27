@@ -1,8 +1,15 @@
 # لعبة شد الحبل (Tug of War) 🏆
 
-لعبة متعددة اللاعبين تعتمد على المنافسة في سحب الحبل بين فريقين.
+let ropePosition = 0;
+document.getElementById("pull-left").addEventListener("click", () => {
+    ropePosition -= 10;
+    updateRope();
+});
+document.getElementById("pull-right").addEventListener("click", () => {
+    ropePosition += 10;
+    updateRope();
+});
 
-## ✨ الميزات المخطط لها
-- وضع لاعب ضد لاعب (PvP).  
-- نظام نقاط وتحديات.  
-- دعم للغة العربية.  
+function updateRope() {
+    document.querySelector(".rope").style.marginLeft = `${ropePosition}px`;
+}
